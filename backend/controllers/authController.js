@@ -10,16 +10,24 @@ exports.signup = async (req, res) => {
       return res.status(400).json({ error: "All fields are required" });
     }
 
-    
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return res.status(400).json({ error: "Invalid email format" });
+    }
+
+    if (password.length < 8) {
+      return res
+        .status(400)
+        .json({ error: "Password must be at least of 8 characters" });
+    }
+
     const existingUser = await User.findOne({ email });
     if (existingUser) {
       return res.status(400).json({ error: "Email already registered" });
     }
 
-    
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    
     const user = new User({
       fullName,
       email,
@@ -28,7 +36,6 @@ exports.signup = async (req, res) => {
 
     await user.save();
 
-    
     const token = jwt.sign(
       { id: user._id, role: user.role },
       process.env.JWT_SECRET,
@@ -59,28 +66,23 @@ exports.login = async (req, res) => {
       return res.status(400).json({ error: "Email and password required" });
     }
 
-    
     const user = await User.findOne({ email });
     if (!user) {
       return res.status(401).json({ error: "Invalid credentials" });
     }
 
-    
     if (user.status !== "active") {
       return res.status(403).json({ error: "Account is inactive" });
     }
 
-    
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
       return res.status(401).json({ error: "Invalid credentials" });
     }
 
-    
     user.lastLogin = new Date();
     await user.save();
 
-    
     const token = jwt.sign(
       { id: user._id, role: user.role },
       process.env.JWT_SECRET,
