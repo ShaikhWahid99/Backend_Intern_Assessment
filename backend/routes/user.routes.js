@@ -7,6 +7,8 @@ const {
   getAllUsers,
   activateUser,
   deactivateUser,
+  updateProfile,
+  changePassword,
 } = require("../controllers/userController");
 
 router.get("/me", authMiddleware, getCurrentUser);
@@ -20,5 +22,8 @@ router.patch(
   adminMiddleware,
   deactivateUser
 );
+
+router.put("/me", authMiddleware, updateProfile);
+router.put("/me/password", authMiddleware, changePassword);
 
 module.exports = router;
