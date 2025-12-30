@@ -2,10 +2,20 @@ const express = require("express");
 const mongoose = require("mongoose");
 const userRoutes = require("./routes/user.routes");
 const authRoutes = require("./routes/auth.routes");
+const cors = require("cors");
 
 require("dotenv").config();
 const app = express();
 app.use(express.json());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://backend-intern-assessment-slsb.onrender.com",
+    ],
+    credentials: true,
+  })
+);
 
 if (process.env.NODE_ENV !== "test") {
   mongoose
