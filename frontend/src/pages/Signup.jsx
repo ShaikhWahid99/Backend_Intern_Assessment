@@ -12,7 +12,7 @@ export default function Signup() {
   const [loading, setLoading] = useState(false);
 
   function isStrongPassword(p) {
-    return p.length >= 8 && /[A-Za-z]/.test(p) && /\d/.test(p);
+    return p.length >= 8;
   }
 
   async function handleSubmit(e) {
@@ -28,7 +28,7 @@ export default function Signup() {
       return;
     }
     if (!isStrongPassword(password)) {
-      setError("Password must be 8+ chars with letters and numbers");
+      setError("Password must be of atleast 8 characters");
       return;
     }
     if (password !== confirmPassword) {
@@ -87,7 +87,9 @@ export default function Signup() {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1">Confirm password</label>
+            <label className="block text-sm font-medium mb-1">
+              Confirm password
+            </label>
             <input
               type="password"
               value={confirmPassword}
@@ -105,7 +107,10 @@ export default function Signup() {
           </button>
         </form>
         <p className="mt-4 text-center text-sm">
-          Already have an account? <Link to="/login" className="text-indigo-600">Login</Link>
+          Already have an account?{" "}
+          <Link to="/login" className="text-indigo-600">
+            Login
+          </Link>
         </p>
       </div>
     </div>
