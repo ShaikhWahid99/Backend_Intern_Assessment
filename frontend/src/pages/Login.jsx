@@ -43,7 +43,7 @@ export default function Login() {
         )}
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-sm font-medium mb-1">Email</label>
+            <label className="block text-sm font-medium mb-1 text-left">Email</label>
             <input
               type="email"
               value={email}
@@ -53,7 +53,7 @@ export default function Login() {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1">Password</label>
+            <label className="block text-sm font-medium mb-1 text-left">Password</label>
             <input
               type="password"
               value={password}

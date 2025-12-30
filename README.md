@@ -1,4 +1,4 @@
-# Backend Intern Assessment — Full Stack App
+# Mini User Management System
 
 ## Project Overview
 
@@ -34,11 +34,11 @@ The frontend is intentionally minimal: React with hooks and Tailwind classes. Th
 - Supertest
 
 ### Tests cover:
-User signup
-User login
-Authentication middleware
-Protected routes
-Invalid credentials handling
+- User signup
+- User login
+- Authentication middleware
+- Protected routes
+- Invalid credentials handling
 
 
 ## Setup Instructions
@@ -118,11 +118,11 @@ Do not commit real values. Define these variables locally and in your deployment
 
 ## Live Links
 
-Backend API: https://your-backend.onrender.com
+Backend API: https://backend-intern-assessment-slsb.onrender.com
 
-Frontend App: https://your-frontend.vercel.app
+Frontend App: https://useranagementsystem.vercel.app/
 
-GitHub Repository: https://github.com/your-username/your-repo
+GitHub Repository: https://github.com/ShaikhWahid99/Backend_Intern_Assessment
 
 
 ## Walkthrough Video
@@ -135,7 +135,6 @@ The complete API documentation and test cases are available via Postman.
 
 Postman Collection Link:
 https://www.postman.com/aviation-geologist-83074237/workspace/backend-assessment-purplemerit/collection/38535830-2bc1b907-df88-48a3-b34a-d32c3eb89990?action=share&creator=38535830
-
 
 The collection includes:
 - Authentication (signup, login, logout)
@@ -313,8 +312,8 @@ Errors: 400 (validation), 401 (old password incorrect), 404, 500
 
 ## Notes
 - CORS is configured in the backend to allow the local frontend and the deployed frontend origin. Adjust `origin` in `backend/app.js` as needed.
--Admin users are created by updating the role field in the database
+- Admin users are created by updating the role field in the database
 - Admin accounts cannot be deactivated via the UI; inactive admins can be re‑activated.
--JWT authentication is stateless, so logout is handled client-side by removing the token
+- JWT authentication is stateless, so logout is handled client-side by removing the token
 
 
