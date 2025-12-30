@@ -7,6 +7,7 @@ This application is a simple full‑stack user management system built for an in
 - Protected routes and role‑based access
 - User Profile page (edit name/email, change password)
 - Admin Dashboard with a paginated users table and actions to activate/deactivate non‑admin accounts
+- Mobile and desktop Responsive Design
 
 The frontend is intentionally minimal: React with hooks and Tailwind classes. The backend is an Express API with JWT authentication and MongoDB.
 
