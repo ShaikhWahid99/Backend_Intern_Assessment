@@ -23,7 +23,7 @@ The frontend is intentionally minimal: React with hooks and Tailwind classes. Th
 ### Backend
 - Node.js
 - Express 5
-- MongoDB with Mongoose
+- MongoDB Atlas with Mongoose
 - JWT (jsonwebtoken)
 - Bcrypt
 - CORS
@@ -120,13 +120,13 @@ Do not commit real values. Define these variables locally and in your deployment
 
 Backend API: https://backend-intern-assessment-slsb.onrender.com
 
-Frontend App: https://useranagementsystem.vercel.app/
+Frontend App: https://useranagementsystem.vercel.app
 
 GitHub Repository: https://github.com/ShaikhWahid99/Backend_Intern_Assessment
 
 
 ## Walkthrough Video
-Video Link:
+Video Link: https://drive.google.com/file/d/1nDzgNMm-e1I4JcBNmV8Oj4KTTQNzyfBF/view?usp=sharing
 
 
 ## API Documentation
