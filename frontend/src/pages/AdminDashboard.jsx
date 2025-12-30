@@ -18,7 +18,7 @@ export default function AdminDashboard() {
   });
 
   const fetchUsers = useCallback(
-    async (p = page) => {
+    async (p) => {
       setError("");
       setMsg("");
       try {
@@ -27,7 +27,7 @@ export default function AdminDashboard() {
           params: { page: p, limit: 10 },
         });
         setUsers(res.data.users || []);
-        setPage(res.data.page || p);
+        setPage(p);
         setTotalPages(res.data.totalPages || 1);
       } catch (err) {
         const m = err?.response?.data?.error || "Failed to load users";
@@ -36,7 +36,7 @@ export default function AdminDashboard() {
         setLoading(false);
       }
     },
-    [page]
+    []
   );
 
   useEffect(() => {
